@@ -5,6 +5,8 @@
 
 The game was (originally?) written in [BASICODE](https://github.com/robhagemans/basicode) in the 1980s. I've translated the [BBC Micro](https://en.wikipedia.org/wiki/BBC_Micro) version of the game into English.
 
+[**Play the game online**](http://bbcmicro.co.uk/game.php?id=3407)
+
 ## History
 I received the Dutch version of the game from [Garry @ CASA](http://www.solutionarchive.com/phpBB3/viewtopic.php?f=3&t=1421#p9751). It was written in BASICODE that had already been customised for [BBC BASIC](https://en.wikipedia.org/wiki/BBC_BASIC) for the BBC Micro computer. So all I had to do was translate the Dutch text into English. The one slight problem was that I don't speak any Dutch! But that's where Google Translate came in very handy...
 
