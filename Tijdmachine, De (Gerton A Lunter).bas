@@ -22,7 +22,10 @@
 361 PRINT:*fx3
 362 RETURN
 1000 A=400:GOTO 20:REM DE TIJDMACHINE
+
 1010 GOSUB 10000:E$="KIJK"
+1010 GOSUB 10000:E$="LOOK"
+
 1100 PT=PT-1:IF P=6 THEN BL=BL+1
 1110 DK=DR
 1120 IF LP<>1 THEN 1130
@@ -39,7 +42,7 @@
 1135 PRINT "  The strange, white flowers smell"
 
 1136 PRINT "heel eigenaardig...":L$="witte bloemen"
-1136 PRINT "very peculiar...":L$="witte bloemen"
+1136 PRINT "very peculiar...":L$="white flowers"
 
 1140 IF PT<=0 THEN 3990
 1145 IF LP=0 THEN 1370
@@ -63,6 +66,7 @@
 1240 PRINT G$(A)
 1250 NEXT A
 
+1270 PRINT "  Mogelijke uitgangen zijn:"
 1270 PRINT "  Possible exits are:"
 
 1280 FOR A=1 TO 10
@@ -119,8 +123,13 @@
 
 1427 GOSUB 18000:CP=1:IF C$="" THEN 1425
 1430 D$=MID$(C$+"   ",1,3)
+
 1440 A$="N  NO O  ZO Z  ZW W  NW OP NEE"
+1440 A$="N  NE E  SE S  SW W  NW UP DOW"
+
 1450 B$="n  no o  zo z  zw w  nw op nee"
+1450 B$="n  ne e  se s  sw w  nw up dow"
+
 1460 GOSUB 16000:IF C=0 THEN 1520
 
 1470 IF D(P,C)=0 THEN PRINT "Daar kun je niet heen.":GOTO 3800
@@ -144,7 +153,11 @@
 1510 PRINT "You are too weak to walk.":E$="":GOTO 1400
 
 1520 A$="KIJOPELAMINVPAKLEGEETONDSTOHEL"
+1520 A$="LOOOPELAMINVGETDROEATEXAQUIHEL"
+
 1530 B$="kijopelaminvpaklegeetondstohel"
+1530 B$="looopelaminvgetdroeatexaquihel"
+
 1540 GOSUB 16000:IF C=0 THEN 1610
 1550 IF C=1 THEN LP=1
 1555 IF C>5 THEN 1570
@@ -211,10 +224,18 @@
 2090 PRINT "You open the door with the key."
 
 2095 LP=1:D(P,9)=26:GOSUB 15000:GOTO 1100
+
 2100 IF LEN(C$)<>8 THEN 1610
+2100 IF LEN(C$)<>8ANDLEN(C$)<>7 THEN 1610
+
 2110 D$=MID$(C$,6,3)
+
 2120 IF (D$="AAN") OR (D$="aan") THEN 2150
+2120 IF (D$="ON") OR (D$="on") THEN 2150
+
 2130 IF (D$<>"UIT") AND (D$<>"uit") THEN 1610
+2130 IF (D$<>"OFF") AND (D$<>"off") THEN 1610
+
 2135 IF G(11)<>0 THEN 2155
 
 2140 IF L=0 THEN PRINT "De lamp was al uit.":GOTO 1100
@@ -450,10 +471,10 @@
 3210 PRINT "The dragon eats the ";G$(13);"."
 
 3215 PRINT "  De taart is vergiftigd. Met zijn"
-3215 PRINT "  The cake is poisoned. With his"
+3215 PRINT "  The cake is poisoned. With its"
 
 3220 PRINT "laatste ademtocht slaakt hij een ver-"
-3220 PRINT "last breath he gives a terrible cry,"
+3220 PRINT "last breath it gives a terrible cry,"
 
 3225 PRINT "schrikkelijke kreet, en sterft."
 3225 PRINT "and dies."
@@ -467,11 +488,23 @@
 3400 PRINT "You examine: ";L$:PRINT
 
 3401 IF (L$="paneel") AND (D(6,1)=0) THEN 3430
+3401 IF (L$="panel") AND (D(6,1)=0) THEN 3430
+
 3402 IF L$="put" THEN 3440
+3402 IF L$="well" THEN 3440
+
 3403 IF L$="luik" THEN 3710
+3403 IF L$="hatch" THEN 3710
+
 3404 IF L$="witte bloemen" THEN 3750
+3404 IF L$="white flowers" THEN 3750
+
 3405 IF L$="tijdmachine" THEN 3720
+3405 IF L$="time machine" THEN 3720
+
 3406 IF L$<>"vitrine" THEN 2870
+3406 IF L$<>"display case" THEN 2870
+
 3409 IF G(14)<>-1 THEN 2870
 
 3410 PRINT "In de ";L$;" ligt een doosje lucifers."
@@ -503,13 +536,13 @@
 3550 PRINT "It falls down.":G(Q)=31+2*LK
 
 3555 PRINT "Onder je hoor je een luid";
-3555 PRINT "Below, you hear a loud";
+3555 PRINT "From below, you hear a loud";
 
 3560 IF Q<>8 THEN PRINT "e plof.":GOTO 1100
 3560 IF Q<>8 THEN PRINT "thud.":GOTO 1100
 
 3570 PRINT " gekraak."
-3570 PRINT " crack."
+3570 PRINT " crash."
 
 3580 G(Q)=33:LK=1:D(31,10)=32
 3590 FOR A=1 TO AO:IF G(A)=31 THEN G(A)=33
@@ -564,7 +597,10 @@
 4000 PRINT:PRINT:PRINT "Do you want to try again?"
 
 4010 GOSUB 210
+
 4020 IF (IN$="J") OR (IN$="j") THEN RUN
+4020 IF (IN$="Y") OR (IN$="y") THEN RUN
+
 4030 IF (IN$<>"N") AND (IN$<>"n") THEN 4010
 4040 END
 
@@ -597,7 +633,10 @@
 6010 PRINT "ARE YOU SURE?"
 
 6020 GOSUB 210
+
 6030 IF (IN$="J") OR (IN$="j") THEN RUN
+6030 IF (IN$="Y") OR (IN$="y") THEN RUN
+
 6040 LP=1:GOTO 1100
 7000 IF PT>=5 THEN 7030
 
@@ -676,14 +715,28 @@
 10110 PRINT "  The commands you can use to complete"
 10120 PRINT "this task are:"
 10130 GOSUB 10900
+
 10140 PRINT "N, NO, NW, Z, ZO, ZW, W, O, OP, NEER,"
+10140 PRINT "N, NE, NW, S, SE, SW, W, E, UP, DOWN,"
+
 10150 PRINT
+
 10160 PRINT "PAK       LAMP AAN"
+10160 PRINT "GET       LAMP ON"
+
 10170 PRINT "LEG       LAMP UIT"
+10170 PRINT "DROP      LAMP OFF"
+
 10180 PRINT "OPEN      INVENTARIS"
+10180 PRINT "OPEN      INVENTORY"
+
 10190 PRINT "EET       ONDERZOEK"
+10190 PRINT "EAT       EXAMINE"
+
 10200 PRINT "KIJK      STOP"
-10210 PRINT:PRINT "en HELP.":PRINT
+10200 PRINT "LOOK      QUIT"
+
+10210 PRINT:PRINT "and HELP.":PRINT
 
 10220 PRINT "De opdrachten mogen in hoofd- en kleine"
 10220 PRINT "The commands can be typed in in upper or";
@@ -816,7 +869,7 @@
 13001 PRINT "middle of the room is a table."
  
 13002 L$="tafel":I$="Zoek het zelf maar uit.":RETURN
-13002 L$="tafel":I$="Find out for yourself.":RETURN
+13002 L$="table":I$="Find out for yourself.":RETURN
 
 13010 PRINT J$;"de woonkamer van een groot"
 13010 PRINT J$;"the living room of a large"
@@ -842,7 +895,7 @@
 13030 PRINT "Je zit in de tijdmachine.":IF F=0 THEN RETURN
 13030 PRINT "You are in the time machine.":IF F=0 THEN RETURN
 
-13031 L$="tijdmachine":IF G(2)=0 THEN 13034
+13031 L$="time machine":IF G(2)=0 THEN 13034
 
 13032 PRINT "De tijdmachine is nog niet helemaal"
 13032 PRINT "The time machine is not quite ready"
@@ -857,13 +910,13 @@
 13035 PRINT "place and pull the handle. A deafening" 
 
 13036 PRINT "Een oorverdovend geraas klinkt in je"
-13036 PRINT "roar rings in your ears. When you stop"
+13036 PRINT "roar rings in your ears. When the time"
 
 13037 PRINT "oren. Als je de tijdmachine stopt, raak"
-13037 PRINT "the time machine, you become"
+13037 PRINT "machine stops, you are unconscious."
  
 13038 PRINT "je bewusteloos."
-13038 PRINT "unconscious."
+13038
 
 13039 GOSUB 15000:P=0:G(2)=-1:RETURN
 
@@ -883,10 +936,10 @@
 13044 PRINT "try to start the time machine, but the"
 
 13045 PRINT "maar de Morlochs hebben de starthandle"
-13045 PRINT "Morlochs have taken the starter handle!"
+13045 PRINT "Morlochs have removed the starter"
 
 13046 PRINT "eraf gehaald!":IF G(12)=0 THEN 13300
-13046 IF G(12)=0 THEN 13300
+13046 PRINT "handle!":IF G(12)=0 THEN 13300
 
 13047 PRINT "De Morlochs overmeesteren je."
 13047 PRINT "The Morlochs overpower you."
@@ -899,7 +952,7 @@
 13051 PRINT "Aan de noordkant staat een witte sphinx"
 13051 PRINT "On the north side is a white sphinx"
 
-13053 L$="paneel":IF F<>1 THEN RETURN
+13053 L$="panel":IF F<>1 THEN RETURN
 
 13054 PRINT "Je bent nog een beetje verdwaasd."
 13054 PRINT "You are still a bit dazed."
@@ -931,7 +984,7 @@
 13070 PRINT J$;"the dormitory. Soft cushions"
 
 13071 PRINT "liggen zachte kussens.":L$="kussen":RETURN
-13071 PRINT "line the walls.":L$="kussen":RETURN
+13071 PRINT "line the walls.":L$="cushions":RETURN
 
 13080 PRINT "Je bent aan de zuidelijke oever van"
 13080 PRINT "You are on the south bank of a fast-"
@@ -966,6 +1019,7 @@
 13101 PRINT "something that looks like a well."
 
 13102 L$="put":IF W=0 THEN RETURN
+13102 L$="well":IF W=0 THEN RETURN
 
 13103 PRINT "Weena kruipt plotseling dicht tegen"
 13103 PRINT "Weena suddenly crawls up close to you."
@@ -1039,7 +1093,7 @@
 13160 PRINT "You are in a small room, with many"
 
 13161 PRINT "kapotte vitrines.":L$="vitrine":RETURN
-13161 PRINT "broken display cases.":L$="vitrine":RETURN
+13161 PRINT "broken display cases.":L$="display case":RETURN
 
 13170 PRINT J$;"een enorme zaal, met grote"
 13170 PRINT J$;"a huge hall, with large"
@@ -1072,12 +1126,13 @@
 13192 PRINT "formaldehyde stare at you"'"with glassy eyes."
 
 13193 L$="dier op sterk water":RETURN
+13193 L$="animal in formaldehyde":RETURN
 
 13200 PRINT J$;"een grote museumzaal,"
 13200 PRINT J$;"a large museum hall,"
 
 13201 PRINT "met grote, glazen vitrines.":L$="vitrines"
-13201 PRINT "with big glass display cases.":L$="vitrines"
+13201 PRINT "with big glass display cases.":L$="display cases"
 
 13202 RETURN
 13210 IF WP<>28 THEN 13214
@@ -1111,7 +1166,7 @@
 13231 PRINT "  Je ziet een grote, hongerige draak."
 13231 PRINT "  You see a big, hungry dragon."
 
-13232 PRINT "De draak komt langzaam op je af."
+13232 PRINT "De draak komt langzaam op je af.":DR=1
 13232 PRINT "The dragon slowly approaches.":DR=1
 
 13233 I$="4":RETURN
@@ -1120,7 +1175,7 @@
 13300 PRINT "How lucky that you have it with you!!"
 
 13305 PRINT "Je monteert de handle, en haalt hem"
-13305 PRINT "You assemble the handle, and pull it..."
+13305 PRINT "You attach the handle, and pull it..."
 
 13310 PRINT "over...."
 13310
@@ -1189,9 +1244,10 @@
 13600 P$="You can go down through a broken hatch."
 
 13605 IF LK=1 THEN L$="versplinterd luik":GOTO 13530
+13605 IF LK=1 THEN L$="splintered hatch":GOTO 13530
 
 13610 L$="luik":I$="Heb je niks zwaars bij je?"
-13610 L$="luik":I$="Don't you have anything heavy with you?"
+13610 L$="hatch":I$="Don't you have anything heavy with you?"
 
 13620 PRINT J$;"een diepe put. Je staat op"
 13620 PRINT J$;"a deep well. You are standing"
@@ -1209,7 +1265,7 @@
 13710 I$="Look a little higher up.":RETURN
 
 14000 PRINT "De draak komt op je af. Hij ziet er"
-14000 PRINT "The dragon charges at you. He looks"
+14000 PRINT "The dragon charges at you. It looks"
 
 14001 PRINT "woest en hongerig uit. Je probeert nog"
 14001 PRINT "ferocious and hungry. You keep trying"
@@ -1243,12 +1299,24 @@
 18065 C$=RIGHT$(E$,LEN(E$)-1):GOTO 18060
 18070 IF CP=1 THEN PRINT " ";C$
 18080 RETURN
+
 19000 IF (A<=2) OR (A=8) THEN PRINT "noord";
+19000 IF (A<=2) OR (A=8) THEN PRINT "north";
+
 19010 IF (A>3) AND (A<7) THEN PRINT "zuid";
+19010 IF (A>3) AND (A<7) THEN PRINT "south";
+
 19020 IF (A>1) AND (A<5) THEN PRINT "oost";
+19020 IF (A>1) AND (A<5) THEN PRINT "east";
+
 19030 IF (A>5) AND (A<9) THEN PRINT "west";
+
 19040 IF A=9 THEN PRINT "op";
+19040 IF A=9 THEN PRINT "up";
+
 19050 IF A=10 THEN PRINT "neer";
+19050 IF A=10 THEN PRINT "down";
+
 19060 RETURN
 25000 DATA -6,2,-1,-2,1,29,3,-1,2,-5,4,-1,-2,3,-1,-1,-2,10,0
 25010 DATA 7,-1,6,-3,8,-1,7,-1,28,-3,10,-1,9,13,12,0,11,0,6
@@ -1261,14 +1329,31 @@
 25080 DATA -7,32,-1,-1,-4,41,36,41,-1,35,41,0,38,-1,-3,39,0
 25090 DATA 36,35,-1,41,37,-4,36,-1,40,32,0,34,-1,0,34,-4,34
 25100 DATA 35,-1,35,34,0,36,-1,0,21,18,-2,18,-1
+
 26000 DATA "schilderij",2,"kristallen staaf",-1
+26000 DATA "painting",2,"crystal rod",-1
+
 26010 DATA "ontbijt",1,"stapeltje papieren",29
+26010 DATA "breakfast",1,"stack of papers",29
+
 26020 DATA "vruchten",7,"urn",27
+26020 DATA "fruits",7,"urn",27
+
 26030 DATA "boek",27,"zwaar breekijzer",24
+26030 DATA "book",27,"heavy crowbar",24
+
 26040 DATA "gebroken urn",-1,"sleutel",-1
+26040 DATA "broken urn",-1,"key",-1
+
 26050 DATA "lamp",26,"handle van tijdmachine",40
+26050 DATA "lamp",26,"time machine handle",40
+
 26060 DATA "amandeltaart",7,"lucifers",-1
+26060 DATA "almond cake",7,"matches",-1
+
 26070 DATA "dode draak",-1,"autoband",15
+26070 DATA "dead dragon",-1,"car tyre",15
+
 30000 REM
 30010 REM      DE  TIJDMACHINE
 30020 REM       EEN ADVENTURE
