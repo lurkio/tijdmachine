@@ -997,7 +997,7 @@
 13123 IF RV>.2 THEN 13130
 
 13124 PRINT "In de verte zie je wat Morlochs lopen.":RETURN
-13124 PRINT "In the distance you recognise some"'"Morlochs, walking.":RETURN
+13124 PRINT "In the distance you see some Morlochs"'"walking.":RETURN
 
 13130 IF RV<.85 THEN RETURN
 
