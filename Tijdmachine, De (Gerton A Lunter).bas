@@ -895,6 +895,7 @@
 13030 PRINT "Je zit in de tijdmachine.":IF F=0 THEN RETURN
 13030 PRINT "You are in the time machine.":IF F=0 THEN RETURN
 
+13031 L$="tijdmachine":IF G(2)=0 THEN 13034
 13031 L$="time machine":IF G(2)=0 THEN 13034
 
 13032 PRINT "De tijdmachine is nog niet helemaal"
@@ -1163,6 +1164,7 @@
 13222 PRINT "and piles of papers.":RETURN
 
 13230 GOSUB 13120:IF DR<>0 THEN RETURN
+
 13231 PRINT "  Je ziet een grote, hongerige draak."
 13231 PRINT "  You see a big, hungry dragon."
 
