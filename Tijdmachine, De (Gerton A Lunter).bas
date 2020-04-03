@@ -704,7 +704,7 @@
 10070 PRINT "who is one of the last people left after";
 
 10080 PRINT "laatsten van alle mensen nog over is,"
-10080 PRINT "the horrible Morlochs conquered the"
+10080 PRINT "the horrible Morlocks conquered the"
 
 10090 PRINT "sinds de afschuwelijke Morlochs de"
 10090 PRINT "earth."
@@ -823,7 +823,7 @@
 12140 PRINT "face...":RETURN
  
 12150 PRINT "  De Morlochs vallen je aan, maar je"
-12150 PRINT "  The Morlochs attack you, but you"
+12150 PRINT "  The Morlocks attack you, but you"
 
 12160 PRINT "verweert je dapper.":PT=PT-10
 12160 PRINT "bravely defend yourself.":PT=PT-10
@@ -834,13 +834,13 @@
 12170 IF (G(8)<>0) OR (RV<.3) THEN 12180
 
 12175 PRINT "Je doodt enkele Morlochs met het breek-"
-12175 PRINT "You kill some Morlochs with the crowbar."
+12175 PRINT "You kill some Morlocks with the crowbar."
 
 12176 PRINT "ijzer."
 12176
 
 12180 IF PT<=0 THEN PRINT "De Morlochs overmeesteren je."
-12180 IF PT<=0 THEN PRINT "The Morlochs overpower you."
+12180 IF PT<=0 THEN PRINT "The Morlocks overpower you."
 
 12190 RETURN
 12200 GOSUB 260
@@ -857,7 +857,7 @@
 12220 IF RV<.8 THEN RETURN
 
 12230 PRINT "Je ziet een Morloch haastig wegvluchten"
-12230 PRINT "You see a Morloch running away from the"
+12230 PRINT "You see a Morlock running away from the"
 
 12240 PRINT "voor het licht.":RETURN
 12240 PRINT "light.":RETURN
@@ -931,19 +931,19 @@
 13042 PRINT "suddenly the door closes and you are"
  
 13043 PRINT "je gevangen. De Morlochs vallen je aan."
-13043 PRINT "trapped. The Morlochs attack you. You" 
+13043 PRINT "trapped. The Morlocks attack you. You" 
 
 13044 PRINT "Je probeert de tijdmachine te starten,"
 13044 PRINT "try to start the time machine, but the"
 
 13045 PRINT "maar de Morlochs hebben de starthandle"
-13045 PRINT "Morlochs have removed the starter"
+13045 PRINT "Morlocks have removed the starter"
 
 13046 PRINT "eraf gehaald!":IF G(12)=0 THEN 13300
 13046 PRINT "handle!":IF G(12)=0 THEN 13300
 
 13047 PRINT "De Morlochs overmeesteren je."
-13047 PRINT "The Morlochs overpower you."
+13047 PRINT "The Morlocks overpower you."
 
 13048 PT=0:RETURN
 
@@ -1052,12 +1052,12 @@
 13123 IF RV>.2 THEN 13130
 
 13124 PRINT "In de verte zie je wat Morlochs lopen.":RETURN
-13124 PRINT "In the distance you see some Morlochs"'"walking.":RETURN
+13124 PRINT "In the distance you see some Morlocks"'"walking.":RETURN
 
 13130 IF RV<.85 THEN RETURN
 
 13131 PRINT "  Plotseling vallen enkele Morlochs je"
-13131 PRINT "  Suddenly some Morlochs attack you."
+13131 PRINT "  Suddenly some Morlocks attack you."
 
 13132 AM=AM+1:IF AM>8 THEN 13135
 
