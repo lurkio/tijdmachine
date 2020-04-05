@@ -508,7 +508,7 @@
 3409 IF G(14)<>-1 THEN 2870
 
 3410 PRINT "In de ";L$;" ligt een doosje lucifers."
-3410 PRINT "In the "+L$+" there's a box of matches."
+3410 PRINT "In the ";L$;" there's a box of"'"matches."
 
 3420 G(14)=P:GOTO 1100
 
@@ -583,10 +583,10 @@
 3745 PRINT G$(2);" missing.":GOTO 1100
 
 3750 PRINT "Je kunt de bloemen niet goed thuis-"
-3750 PRINT "You can't really bring the flowers"
+3750 PRINT "You don't really recognise the"
 
 3760 PRINT "brengen. Ze ruiken erg sterk.":GOTO 1100
-3760 PRINT "home. They smell very strong.":GOTO 1100
+3760 PRINT "flowers. They smell very strong.":GOTO 1100
 
 3800 E$="":GOTO 1100
 
@@ -608,10 +608,10 @@
 4100 PRINT:PRINT "  Unfortunately, you didn't complete the"
 
 4110 PRINT "volbrengen. Pas de volgende keer een"
-4110 PRINT "assignment. Next time be a little nicer"
+4110 PRINT "assignment. Next time, take better care"
 
 4120 PRINT "beetje beter op Weena!":GOTO 4000
-4120 PRINT "to Weena!":GOTO 4000
+4120 PRINT "of Weena!":GOTO 4000
 
 5000 PRINT
 5010 PRINT "Je bent weer thuis. Je bent naar de"
@@ -809,7 +809,7 @@
 12080 IF L<>0 THEN 12200
 
 12090 GOSUB 260:I$="Weg hier!"
-12090 GOSUB 260:I$="Get lost!"
+12090 GOSUB 260:I$="Get out of here!"
 
 12100 PRINT "Je ziet niet veel. Het is donker."
 12100 PRINT "You can't see much. It's dark."
