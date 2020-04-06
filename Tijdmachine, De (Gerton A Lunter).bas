@@ -834,7 +834,7 @@
 12170 IF (G(8)<>0) OR (RV<.3) THEN 12180
 
 12175 PRINT "Je doodt enkele Morlochs met het breek-"
-12175 PRINT "You kill some Morlocks with the crowbar."
+12175 PRINT "You kill some Morlocks with the crowbar.";
 
 12176 PRINT "ijzer."
 12176
