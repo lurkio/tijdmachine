@@ -1026,7 +1026,7 @@
 13103 PRINT "Weena suddenly crawls up close to you."
 
 13104 PRINT "je aan. Ze ziet er bang uit."
-13104 PRINT "She looks scared.""
+13104 PRINT "She looks scared."
 
 13105 I$="Laat haar hier maar achter.":RETURN
 13105 I$="Leave her here.":RETURN
